@@ -497,6 +497,9 @@ static void print_status_narrow(void) {
         case FUN:
             oled_write("Function ", false);
             break;
+        case SYM:
+            oled_write("Sym ", false);
+            break;
         default:
             oled_write("Undef", false);
     }
