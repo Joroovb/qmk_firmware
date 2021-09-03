@@ -29,16 +29,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define USE_SERIAL_PD2
 
-#ifdef RGBLIGHT_ENABLE
-    #undef RGBLED_NUM
-    #define RGBLIGHT_ANIMATIONS
-    #define RGBLED_NUM 27
-    #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
-#endif
-
 #ifndef NO_DEBUG
 #define NO_DEBUG
 #endif // !NO_DEBUG
@@ -54,7 +44,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // default but used in macros
 #undef TAPPING_TERM
-#define TAPPING_TERM 500
+#define TAPPING_TERM 200
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
@@ -69,6 +59,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Recommended for heavy chording.
 #define QMK_KEYS_PER_SCAN 4
+
+// Mouse key speed and acceleration.
+#undef MOUSEKEY_DELAY
+#define MOUSEKEY_DELAY          0
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL       16
+#undef MOUSEKEY_WHEEL_DELAY
+#define MOUSEKEY_WHEEL_DELAY    0
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED      6
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX    64
 
 #define U_NU KC_NO // available but not used
 #define U_NA KC_NO // present but not available for use
