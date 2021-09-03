@@ -20,14 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
-
 /* Select hand configuration */
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
-
-#define USE_SERIAL_PD2
 
 #ifndef NO_DEBUG
 #define NO_DEBUG
@@ -36,26 +30,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_PRINT
 #endif // !NO_PRINT
 
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-
-#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-#define OLED_TIMEOUT 120000
-
 // default but used in macros
 #undef TAPPING_TERM
-#define TAPPING_TERM 200
+#define TAPPING_TERM 500
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
-
-// Auto Shift
-#define NO_AUTO_SHIFT_ALPHA
-#define AUTO_SHIFT_TIMEOUT TAPPING_TERM
-#define AUTO_SHIFT_NO_SETUP
 
 // Recommended for heavy chording.
 #define QMK_KEYS_PER_SCAN 4
@@ -74,8 +57,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define U_NU KC_NO // available but not used
 #define U_NA KC_NO // present but not available for use
-#define U_RDO KC_AGIN
-#define U_PST S(KC_INS)
-#define U_CPY C(KC_INS)
-#define U_CUT S(KC_DEL)
-#define U_UND KC_UNDO
+#define U_RDO SCMD(KC_Z) 
+#define U_PST LCMD(KC_V)
+#define U_CPY LCMD(KC_C)
+#define U_CUT LCMD(KC_X)
+#define U_UND LCMD(KC_Z)
